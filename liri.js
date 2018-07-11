@@ -138,7 +138,11 @@ function movieThis() {
             console.log("The movie's title: " + JSON.parse(body).Title);
             console.log("The movie's release year: " + JSON.parse(body).Year);
             console.log("The movie's IMBD rating: " + JSON.parse(body).imdbRating);
-            // console.log("The movie's Rotten Tomatoes rating: " + JSON.parse(body).Ratings[1].Value);
+            if (JSON.parse(body).Ratings.length > 1) {
+                console.log("The movie's Rotten Tomatoes rating: " + JSON.parse(body).Ratings[1].Value);
+            } else {
+                console.log("The movie's Rotten Tomatoes rating: N/A");
+            }
             console.log("The country(s) the movie was produced in: " + JSON.parse(body).Country);
             console.log("The movie's language(s): " + JSON.parse(body).Language);
             console.log("The movie's plot: " + JSON.parse(body).Plot);
